@@ -7,18 +7,23 @@ categories: gcp gitlab
 # Objectives:
 
 * Create a GCE VM with an internal IP address only
-* Install GitLab
-* Configure GitLab to have one way access to the Internet
+* Install a private GitLab instance
+* Configure outbound connectivity through Cloud NAT
 * Access GitLab through IAP
 
 # Steps
 
 ## Set your env variables
+```
 export PROJECT_ID=MY_PROJECT_ID
 export VPC_NAME=MY_VPC_NAME
 export SUBNET_NAME=MY_SUBNET_NAME
 export SUBNET_RANGE=MY_SUBNET_RANGE
+export NAT_NAME=MY_NAT_NAME
+export ROUTER_NAME=MY_ROUTER_NAME
 export REGION=MY_REGION
+export ZONE=MY_ZONE
+```
 
 ## Create a VPC
 ```
@@ -37,11 +42,11 @@ gcloud beta compute instances create gitlab-internal --zone=$ZONE --machine-type
 ```
 
 ## Preparing your project for IAP TCP forwarding
-You will use [IAP TCP forwarding](https://cloud.google.com/iap/docs/tcp-forwarding-overview) to enable SSH access to our VM as it does not have a public IP address. IAP TCP forwarding allows you to establish an encrypted tunnel over which you can forward SSH traffic to VM instances.
+You will use [IAP TCP forwarding](https://cloud.google.com/iap/docs/tcp-forwarding-overview) to enable SSH access to your VM as it does not have a public IP address. IAP TCP forwarding allows you to establish an encrypted tunnel over which you can forward SSH traffic to VM instances.
 
 ### Create a firewall rule
 You create a firewall rule that allows ingress traffic from the IP range 35.235.240.0/20. This range contains all IP addresses that IAP uses for TCP forwarding.
-The rule also allows connections to port 22 where we want SSH to be accessible by using IAP TCP forwarding.
+The rule also allows SSH connections by using IAP TCP forwarding.
 
 ```
 gcloud compute firewall-rules create allow-ssh-ingress-from-iap \
@@ -114,4 +119,20 @@ export IP_ADDRESS=gcloud compute instances describe gitlab-internal \
 
 sudo EXTERNAL_URL="http://$IP_ADDRESS" apt-get install gitlab-ee
 ```
+GitLab is installed once this completes.
 
+## Access GitLab
+
+### Start a tunnel
+```
+gcloud compute start-iap-tunnel gitlab-internal 80 \
+    --local-host-port=localhost:8080 \
+    --zone=$ZONE
+```
+### Reser password
+Go to `localhost:8080` in a browser on your local computer and reset your password.
+
+### Log in to GitLab
+Log in to GitLab with your new password.
+
+You have created a private GitLab instance! It's not accessible from the public internet and can be accessed from a bastion host, VPN or IAP TCP forwarding, as demonstrated in this post.
