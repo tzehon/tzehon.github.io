@@ -129,7 +129,7 @@ gcloud compute start-iap-tunnel gitlab-internal 80 \
     --local-host-port=localhost:8080 \
     --zone=$ZONE
 ```
-### Reser password
+### Reset password
 Go to `localhost:8080` in a browser on your local computer and reset your password.
 
 ### Log in to GitLab
