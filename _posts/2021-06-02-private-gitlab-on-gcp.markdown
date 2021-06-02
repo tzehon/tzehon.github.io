@@ -80,13 +80,13 @@ gcloud compute routers nats create $NAT_NAME \
     --enable-logging
 ```
 
-## Create firewall to allow inbound HTTPS access
+## Create firewall to allow inbound HTTP access
 ```
-gcloud compute firewall-rules create allow-https \
+gcloud compute firewall-rules create allow-http \
   --direction=INGRESS \
   --network=$VPC_NAME \
   --action=allow \
-  --rules=tcp:443 \
+  --rules=tcp:80 \
   --source-ranges=0.0.0.0/0
 ```
 
@@ -112,6 +112,6 @@ export IP_ADDRESS=gcloud compute instances describe gitlab-internal \
                     --zone=$ZONE \
                     --format='get(networkInterfaces[0].networkIP)'
 
-sudo EXTERNAL_URL="https://$IP_ADDRESS" apt-get install gitlab-ee
+sudo EXTERNAL_URL="http://$IP_ADDRESS" apt-get install gitlab-ee
 ```
 
