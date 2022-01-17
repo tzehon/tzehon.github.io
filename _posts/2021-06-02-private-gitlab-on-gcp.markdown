@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Install and access a private GitLab instance on GCP"
-date:   2021-006-02 18:45:10 +0800
+date:   2021-06-02 18:45:10 +0800
 categories: gcp gitlab
 ---
 # Objectives:
