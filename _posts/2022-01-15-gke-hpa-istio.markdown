@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Configure HPA to autoscale with Istio metrics"
+title:  "Configure HPA to autoscale with Istio metrics on GKE"
 date:   2022-01-15 18:45:10 +0800
 categories: istio
 ---
@@ -16,7 +16,7 @@ categories: istio
 
 ## Objectives
 
--  Create a cluster
+-  Create a GKE cluster
 -  Install Istio on the cluster
 -  Configure Istio to send metrics to Cloud Monitoring
 -  Autoscale a workload using Istio metrics
