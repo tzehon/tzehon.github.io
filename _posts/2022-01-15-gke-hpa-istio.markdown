@@ -193,7 +193,7 @@ This HPA makes scaling decisions based on Istio metrics in Cloud Monitoring.
 
 ### Observe autoscale event
 
-If you have properly configured your cluster to work with HPA via Istio metrics in Cloud Monitoring, you should a ‘SuccessfulRescale' event after a few minutes:
+If you have properly configured your cluster to work with HPA via Istio metrics in Cloud Monitoring, you should see a ‘SuccessfulRescale' event after a few minutes:
 
 ```
 $ kubectl -n default describe hpa productcatalogservice
