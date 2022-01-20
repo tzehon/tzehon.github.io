@@ -59,14 +59,14 @@ Create a cluster:
 
 ```
 gcloud container clusters create "${CLUSTER_NAME}" \
---zone "${ZONE}" \
---machine-type "e2-standard-4" \
---logging=SYSTEM,WORKLOAD \
---monitoring=SYSTEM \
---enable-autoscaling \
-         	--min-nodes "0" \
-         	--max-nodes "5" \
-         	--addons HorizontalPodAutoscaling,HttpLoadBalancing
+  --zone "${ZONE}" \
+  --machine-type "e2-standard-4" \
+  --logging=SYSTEM,WORKLOAD \
+  --monitoring=SYSTEM \
+  --enable-autoscaling \
+  --min-nodes "0" \
+  --max-nodes "5" \
+  --addons HorizontalPodAutoscaling,HttpLoadBalancing
 ```
 
 ## Install Istio on your cluster
@@ -75,15 +75,15 @@ Configure `kubectl` to communicate with the cluster:
 
 ```
 gcloud container clusters get-credentials ${CLUSTER_NAME} \
---zone ${ZONE}
+  --zone ${ZONE}
 ```
 
 Grant cluster administrator permissions to the current user:
 
 ```
 kubectl create clusterrolebinding cluster-admin-binding \
---clusterrole=cluster-admin \
---user=$(gcloud config get-value core/account)
+  --clusterrole=cluster-admin \
+  --user=$(gcloud config get-value core/account)
 ```
 
 Configure the Helm repository:
@@ -109,22 +109,22 @@ Install the Istio discovery chart which deploys the istiod service and configure
 
 ```
 helm install istiod istio/istiod -n istio-system --wait \
---set telemetry.v2.stackdriver.enabled=true \
---set telemetry.v2.stackdriver.logging=true \
---set telemetry.v2.stackdriver.monitoring=true \
---set telemetry.v2.stackdriver.topology=true
+  --set telemetry.v2.stackdriver.enabled=true \
+  --set telemetry.v2.stackdriver.logging=true \
+  --set telemetry.v2.stackdriver.monitoring=true \
+  --set telemetry.v2.stackdriver.topology=true
 ```
 
 You can check the generated yaml file that is installed by helm by adding the –dry-run flag:
 
 ```
 helm install istiod istio/istiod -n istio-system --wait \
---set telemetry.v2.stackdriver.enabled=true \
---set telemetry.v2.stackdriver.logging=true \
---set telemetry.v2.stackdriver.monitoring=true \
---set telemetry.v2.stackdriver.topology=true \
---dry-run \
---debug > generated.yaml
+  --set telemetry.v2.stackdriver.enabled=true \
+  --set telemetry.v2.stackdriver.logging=true \
+  --set telemetry.v2.stackdriver.monitoring=true \
+  --set telemetry.v2.stackdriver.topology=true \
+  --dry-run \
+  --debug > generated.yaml
 ```
 
 Enable Istio sidecar proxy injection in the default Kubernetes namespace:
