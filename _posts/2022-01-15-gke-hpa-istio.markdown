@@ -187,9 +187,9 @@ spec:
 
 EOF
 kubectl apply -f hpa.yaml
+```
 
 This HPA makes scaling decisions based on Istio metrics in Cloud Monitoring.
-```
 
 ### Observe autoscale event
 
