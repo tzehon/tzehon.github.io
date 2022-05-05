@@ -8,7 +8,9 @@ categories: gcp cloudrun
 Currently, service discovery in Cloud Run isn't easy -
 
 * You must specify the FQDN (Fully-Qualified Domain Name), which is not deterministic today, resulting in confusion
+
 * To work around the FQDN issues, many try to use a custom domain, which can also be confusing
+
 * You can also use Cloud Load Balancing, but that is an additional component which incurs additional financial and operational cost, and adds an extra hop between service to service calls
 
 Authentication is also not straightforward -
