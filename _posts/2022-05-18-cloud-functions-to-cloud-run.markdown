@@ -85,7 +85,7 @@ source .venv/bin/activate
 ```
 cat  << EOF > main.py
 def hello(request):
-        return "Hello world!"
+  return "Hello world!"
 EOF
 ```
 
