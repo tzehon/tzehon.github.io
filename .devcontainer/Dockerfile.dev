@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 COPY Gemfile Gemfile.lock ./
 
-RUN apt-get update && apt-get -y install build-essential zlib1g-dev
+RUN apt-get update && apt-get -y install zsh build-essential zlib1g-dev
 RUN bundle install
 
 COPY . .
