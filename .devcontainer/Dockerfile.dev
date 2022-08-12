@@ -1,0 +1,14 @@
+FROM ruby:2.7.6
+
+RUN bundle config --global frozen 1
+
+WORKDIR /usr/src/app
+
+COPY Gemfile Gemfile.lock ./
+
+RUN apt-get update && apt-get -y install build-essential zlib1g-dev
+RUN bundle install
+
+COPY . .
+
+CMD ["/bin/bash"]
