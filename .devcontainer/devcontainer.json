@@ -6,8 +6,6 @@
         "args": {}
     },
     "forwardPorts": [4000],
-    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
-    "workspaceFolder": "/workspace",
     "customizations": {
       "vscode": {
         "extensions": ["rebornix.Ruby"]
