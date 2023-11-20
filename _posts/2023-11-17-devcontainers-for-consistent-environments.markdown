@@ -20,7 +20,7 @@ In terms of developer experience (DevEx), consistency and efficiency in our dev 
 
 ## Version Control Friendly
 
-**Consistent Builds with devcontainer-lock.json:** The devcontainer.json file ensures that every member of your team is using the exact same build of the development environment. This consistency extends to your CI/CD pipelines, making sure that builds and tests run in an environment identical to the one on your local machine.
+**Consistent Builds with devcontainer.json:** The devcontainer.json file ensures that every member of your team is using the exact same build of the development environment. This consistency extends to your CI/CD pipelines, making sure that builds and tests run in an environment identical to the one on your local machine.
 
 ## Scalable and Collaborative
 
