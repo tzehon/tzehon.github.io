@@ -8,7 +8,10 @@
     "forwardPorts": [4000],
     "customizations": {
       "vscode": {
-        "extensions": ["rebornix.Ruby"]
+        "extensions": [
+            "rebornix.Ruby",
+            "ms-azuretools.vscode-docker"
+        ]
       }
     }
   }
