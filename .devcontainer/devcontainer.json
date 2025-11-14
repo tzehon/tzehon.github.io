@@ -6,10 +6,18 @@
         "args": {}
     },
     "forwardPorts": [4000],
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "configureZshAsDefaultShell": true,
+            "username": "vscode"
+        }
+    },
     "customizations": {
       "vscode": {
         "extensions": [
-            "rebornix.Ruby",
+            "Shopify.ruby-lsp",
             "ms-azuretools.vscode-docker"
         ]
       }
