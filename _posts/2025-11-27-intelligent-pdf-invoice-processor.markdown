@@ -7,6 +7,8 @@ categories: llm mongodb streamlit vector-search python
 
 I built a [Streamlit](https://streamlit.io/) application that processes PDF invoices and receipts, automatically classifies merchants using vector similarity search, and provides natural language querying capabilities. The project demonstrates how to combine modern embedding models, vector databases, and LLMs to create an intelligent document processing system.
 
+**Update (Dec 2025):** The project has been modernized to use Claude's Vision API for direct PDF analysis and Structured Outputs for guaranteed valid JSON responses. This removes the need for intermediate text extraction and significantly improves handling of complex document layouts.
+
 ## The Problem
 
 Anyone who's tried to organize their receipts knows the pain: the same merchant appears under dozens of different names. "Grab Singapore Pte Ltd" on one receipt, "Grab SG" on another, and "GRAB*GRABPAY" on yet another. Traditional exact-match systems fail miserably here, and manually normalizing merchant names doesn't scale.
@@ -18,6 +20,39 @@ The system uses a three-stage approach to merchant classification:
 1. **Exact synonym matching** - Fast lookup for known variations
 2. **Vector similarity search** - Find semantically similar merchant names
 3. **LLM verification** - Claude Sonnet 4.5 confirms uncertain matches
+
+### PDF Processing with Claude Vision
+
+Instead of extracting text from PDFs and then analyzing it, the system now sends PDFs directly to Claude's Vision API as base64-encoded images. This approach has several advantages:
+
+- **Preserves layout context** - Tables, columns, and spatial relationships are understood
+- **Handles complex formats** - Multi-column receipts, handwritten notes, stamps
+- **No OCR dependencies** - Removes the need for PyMuPDF or similar libraries
+- **Better accuracy** - Claude can see the document exactly as a human would
+
+### Structured Outputs for Reliable Data Extraction
+
+The project uses Claude's [tool use feature](https://docs.anthropic.com/en/docs/build-with-claude/tool-use) to guarantee valid JSON responses. Instead of hoping the LLM returns well-formed JSON, we define a schema and Claude is constrained to return data matching that schema:
+
+```python
+tools = [{
+    "name": "extract_invoice_data",
+    "description": "Extract structured data from invoice/receipt",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "merchant_name": {"type": "string"},
+            "date": {"type": "string", "format": "date"},
+            "total_amount": {"type": "number"},
+            "currency": {"type": "string"},
+            "items": {"type": "array", "items": {...}}
+        },
+        "required": ["merchant_name", "total_amount"]
+    }
+}]
+```
+
+This eliminates JSON parsing errors and retry logic that plagues many LLM applications.
 
 ### Why Vector Similarity Works
 
@@ -33,12 +68,12 @@ The model produces 768-dimensional embeddings that capture semantic meaning. Whe
 ### Technical Architecture
 
 ```
-PDF Upload → Text Extraction → Metadata Extraction (Claude) → Merchant Classification → Storage
-                                                                      ↓
-                                              Exact Match → Vector Search → LLM Verification
+PDF Upload → Claude Vision API → Structured Outputs → Merchant Classification → Storage
+                                                               ↓
+                                         Exact Match → Vector Search → LLM Verification
 ```
 
-The classification flow prioritizes speed for obvious matches while falling back to LLM verification only when necessary. This keeps costs low (roughly $0.01-0.05 per document) while maintaining high accuracy.
+The classification flow prioritizes speed for obvious matches while falling back to LLM verification only when necessary. This keeps costs low (roughly $0.02-0.10 per document depending on PDF complexity) while maintaining high accuracy.
 
 ### Natural Language Querying
 
@@ -69,9 +104,11 @@ The code is available at [research/invoice_processor](https://github.com/tzehon/
 
 ## Key Learnings
 
-1. **Vector similarity thresholds matter** - 0.85 was the sweet spot between false positives and misses
-2. **LLM verification is expensive** - Use it as a fallback, not a first pass
-3. **Synonyms compound over time** - Each processed document improves future classification
-4. **Multilingual models are underrated** - The cross-lingual transfer capabilities are impressive
+1. **Vision APIs beat text extraction** - Sending documents directly to Claude Vision preserves layout context that gets lost in OCR pipelines
+2. **Structured Outputs eliminate parsing headaches** - Using tool use for guaranteed JSON schema compliance is far more reliable than prompt engineering
+3. **Vector similarity thresholds matter** - 0.85 was the sweet spot between false positives and misses
+4. **LLM verification is expensive** - Use it as a fallback, not a first pass
+5. **Synonyms compound over time** - Each processed document improves future classification
+6. **Multilingual models are underrated** - The cross-lingual transfer capabilities are impressive
 
-The combination of fast vector search with slower but more accurate LLM verification creates a system that improves with use while keeping operational costs reasonable.
+The combination of Claude Vision for document understanding, structured outputs for reliable extraction, and vector search with LLM verification for classification creates a system that improves with use while keeping operational costs reasonable.
