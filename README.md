@@ -8,7 +8,8 @@ Personal technical blog covering cloud infrastructure, DevOps, and modern develo
 - Service mesh (Istio)
 - Infrastructure automation
 - Development environments (DevContainers)
-- Databases and AI/ML (MongoDB, Vector Search, LLMs)
+- Python tooling and automation
+- AI/ML (Vector Search, LLMs, MongoDB Atlas)
 
 ## Local Development
 
