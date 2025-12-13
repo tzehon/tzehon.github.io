@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Deploying MongoDB Ops Manager on Kubernetes with cert-manager"
-date:   2025-12-13 12:00:00 +0800
+date:   2025-12-13 00:00:00 +0800
 categories: mongodb kubernetes ops-manager tls
 ---
 
