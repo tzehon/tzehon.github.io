@@ -15,7 +15,7 @@ Personal technical blog covering cloud infrastructure, DevOps, and modern develo
 
 ### Prerequisites
 
-- Ruby 2.7.6+
+- Ruby 3.3.4 (matches GitHub Pages)
 - Bundler
 
 ### Setup
