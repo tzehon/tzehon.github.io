@@ -1,5 +1,7 @@
 # blog.tth.dev
 
+[![GitHub Pages](https://github.com/tzehon/tzehon.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/tzehon/tzehon.github.io/actions/workflows/pages/pages-build-deployment)
+
 Personal technical blog. Built with Jekyll and hosted on GitHub Pages.
 
 **Live site:** [blog.tth.dev](https://blog.tth.dev)
