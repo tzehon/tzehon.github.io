@@ -1,24 +1,10 @@
 # blog.tth.dev
 
-Personal technical blog covering cloud infrastructure, DevOps, and modern development practices. Built with Jekyll and hosted on GitHub Pages.
+Personal technical blog. Built with Jekyll and hosted on GitHub Pages.
 
-## Topics
-
-- Google Cloud Platform (GKE, Cloud Run, Cloud Functions)
-- Service mesh (Istio)
-- Infrastructure automation
-- Development environments (DevContainers)
-- Python tooling and automation
-- AI/ML (Vector Search, LLMs, MongoDB Atlas)
+**Live site:** [blog.tth.dev](https://blog.tth.dev)
 
 ## Local Development
-
-### Prerequisites
-
-- Ruby 3.3.4 (matches GitHub Pages)
-- Bundler
-
-### Setup
 
 ```bash
 bundle install
@@ -27,31 +13,29 @@ bundle exec jekyll serve
 
 Visit http://localhost:4000
 
-### Using DevContainers
-
-Open the repository in VS Code with the Dev Containers extension, or use GitHub Codespaces/Gitpod for browser-based development.
+Alternatively, use the included DevContainer with VS Code or GitHub Codespaces.
 
 ## Writing Posts
 
-Create a new file in `_posts/` with the naming convention:
+Create a new file in `_posts/`:
 
 ```
 YYYY-MM-DD-title.markdown
 ```
 
-Include front matter at the top:
+With front matter:
 
 ```yaml
 ---
 layout: post
 title: "Your Post Title"
 date: YYYY-MM-DD HH:MM:SS +0800
-categories: category1 category2
+categories: category
 ---
 ```
 
-Push to `main` to deploy automatically via GitHub Pages.
+Push to `main` to deploy.
 
 ## License
 
-Content is copyright the author. Code snippets in blog posts are available under MIT unless otherwise noted.
+Content is copyright the author. Code snippets are available under MIT unless otherwise noted.
