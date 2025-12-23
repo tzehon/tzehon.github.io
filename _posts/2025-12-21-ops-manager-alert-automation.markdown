@@ -5,7 +5,7 @@ date:   2025-12-21 12:00:00 +0800
 categories: mongodb ops-manager automation python
 ---
 
-In a [previous post](/llm/mongodb/atlas/automation/python/2025/11/27/automating-mongodb-atlas-alerts.html), I covered automating MongoDB Atlas alert configurations using Excel and the Atlas CLI. This post extends that approach to self-managed MongoDB deployments using Ops Manager.
+In a [previous post](/mongodb/atlas/automation/python/2025/11/27/automating-mongodb-atlas-alerts.html), I covered automating MongoDB Atlas alert configurations using Excel and the Atlas CLI. This post extends that approach to self-managed MongoDB deployments using Ops Manager.
 
 ## Why Ops Manager Needs Different Tooling
 
