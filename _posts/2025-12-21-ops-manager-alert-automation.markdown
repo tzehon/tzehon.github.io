@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Extending Alert Automation to MongoDB Ops Manager"
-date:   2025-12-27 12:00:00 +0800
+date:   2025-12-21 12:00:00 +0800
 categories: mongodb ops-manager automation python
 ---
 
