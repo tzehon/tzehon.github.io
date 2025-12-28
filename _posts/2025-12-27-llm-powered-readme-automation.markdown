@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Automating README Summaries with LLM CLI and GitHub Actions"
-date:   2025-12-28 12:00:00 +0800
+date:   2025-12-27 12:00:00 +0800
 categories: llm automation github-actions
 ---
 
