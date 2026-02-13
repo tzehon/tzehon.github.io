@@ -16,15 +16,10 @@ A standalone MongoDB instance or replica set stores all your data on one set of 
 MongoDB uses the **shard key** — one or more fields present in every document — to decide which shard owns each document. The shard key divides the data into **chunks**, and MongoDB's balancer moves chunks between shards to keep things even.
 
 ```
-        +------------------------------+
-        |       mongos (router)        |
-        |  Routes queries by shard key |
-        +-------+----------+----------+
-                |          |          |
-           +----+---+ +----+---+ +----+----+
-           |Shard A | |Shard B | |Shard C  |
-           |ch 1-4  | |ch 5-8  | |ch 9-12  |
-           +--------+ +--------+ +---------+
+            mongos (router)
+           /       |       \
+      Shard A   Shard B   Shard C
+      ch 1-4    ch 5-8    ch 9-12
 ```
 
 When a query includes the shard key, `mongos` routes it directly to the right shard (**targeted query**). When it doesn't, `mongos` broadcasts the query to every shard and merges results (**scatter-gather**). Targeted queries are fast; scatter-gather queries get slower as you add shards.
