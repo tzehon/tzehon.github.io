@@ -9,7 +9,7 @@ published: false
 # Wardrobe Stylist
 
 > **Unpublished release draft.** This page is intentionally excluded from the live GitHub Pages
-> build until its response target and production evidence are complete.
+> build until its production evidence is complete.
 
 Wardrobe Stylist is a personal, local-first iOS fashion-stylist app. You can catalog clothing from
 photos, optionally import purchase information through read-only Gmail access, and request outfit
@@ -19,12 +19,11 @@ suggestions. Manual and photo wardrobe features work without connecting Google.
 
 Email [contact@tth.dev](mailto:contact@tth.dev).
 
+Expected response time: within two business days.
+
 When reporting a problem, include the Wardrobe Stylist version and build, iOS version, device
 model, what you expected, and what happened. Do not send receipt contents, Gmail messages, OAuth
 tokens, backend credentials, App Attest material, or private wardrobe photos.
-
-**Release blocker:** Choose, publish, and rehearse a business-day response target before making
-this page live.
 
 ## Common questions
 

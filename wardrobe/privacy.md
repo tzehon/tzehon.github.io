@@ -14,6 +14,8 @@ published: false
 
 **Privacy contact:** [contact@tth.dev](mailto:contact@tth.dev)
 
+**Support response target:** Within two business days.
+
 Wardrobe Stylist helps you build a wardrobe catalog and get outfit suggestions. You can add items
 manually or from photos without connecting Google. If you connect Gmail, the app uses read-only
 access to look for purchase receipts. Gmail connection, AI processing, background receipt import,
@@ -157,7 +159,7 @@ The following release evidence or owner decisions remain required:
 - written Fly.io confirmation for provider-controlled edge fields and raw-IP retention;
 - observation of actual 14-day snapshot expiry and an isolated restore/deletion rehearsal;
 - monitored alert routing, delivery rehearsal, and alert-record retention;
-- a published support response target and inbound-mail rehearsal;
+- an inbound-mail delivery rehearsal for the published contact address;
 - final production request captures and processor-retention review;
 - server-deletion evidence from the processed TestFlight build; and
 - verified Apple backup and restore behavior for every local store;
