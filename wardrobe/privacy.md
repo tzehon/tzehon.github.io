@@ -58,7 +58,12 @@ subjects rather than raw IP addresses. Application security events are designed 
 addresses, installation and key identifiers, credentials, request content, and model content.
 Fly.io has confirmed that its customer-visible proxy/platform error records can nevertheless
 include paths, request IDs, and sometimes client IP, and that separate provider operational or
-abuse-prevention logs can contain source IP.
+abuse-prevention logs can contain source IP. The customer-visible stream lasts seven days and
+cannot be shortened per app; the separate provider-internal in-service retention is undisclosed
+and not customer-configurable. These retained technical records support app functionality, network
+delivery, abuse prevention, security, reliability, and diagnostics. They may be associated with an
+app installation or request, and are not used by the developer for advertising or cross-company
+tracking.
 
 Anonymous App Attest security metadata can include key and challenge IDs, one-time challenge
 secrets, a verified public key, an anonymous installation ID, assertion counter, App ID and
@@ -73,7 +78,8 @@ private key remains in the Secure Enclave and raw bearer tokens are not stored b
 The developer uses information only to provide features you request: importing wardrobe items
 from receipts, generating outfit suggestions, preventing excessive repeats, securing and
 operating the service, diagnosing failures, and complying with law. The developer does not use
-Gmail data for advertising, data brokerage, credit or lending decisions, or advertising profiles.
+Gmail or technical/security data for advertising, data brokerage, credit or lending decisions,
+advertising profiles, or tracking across other companies' apps and websites.
 Provider handling remains governed by the provider terms and configurations that must be verified
 before this draft is published.
 
@@ -119,10 +125,9 @@ The authentication volume is encrypted and configured for rolling 14-day snapsho
 snapshot then disappears from the customer listing, but does not disclose all-copy purge timing.
 Fly.io also says the customer-visible log stream is retained for a fixed seven days and cannot be
 shortened per app; its separate provider operational/abuse-log in-service retention is undisclosed
-and has no customer-enforceable hard maximum. This conflicts with the currently approved 24-hour
-provider raw-IP limit. After the owner resolves that hosting/policy decision, this section must
-state the final provider boundary, application-security-log maximum, snapshot semantics, and
-alert-record maximum.
+and has no customer-enforceable hard maximum. These hosting records are separate from the live
+server record and are not removed immediately by the in-app deletion action. The separate 24-hour
+live server-deletion deadline remains unchanged.
 
 ## Your choices and controls
 
@@ -160,18 +165,20 @@ notice before that flow resumes.
 
 ## Before publication
 
-The following release evidence or owner decisions remain required:
+The following release evidence or final publication decisions remain required:
 
-- an owner decision to move to a host that can enforce the approved 24-hour provider raw-IP
-  maximum or to revise the policy and disclosure; Fly.io has confirmed it cannot enforce that
-  maximum;
-- observation of actual 14-day snapshot expiry and an isolated restore/deletion rehearsal;
+- observation of actual 14-day snapshot-list disappearance and an isolated restore/deletion
+  rehearsal;
 - monitored alert routing, delivery rehearsal, and alert-record retention;
 - final production request captures and processor-retention review;
-- server-deletion evidence from the processed TestFlight build; and
+- server-deletion evidence from the processed TestFlight build;
 - verified Apple backup and restore behavior for every local store;
+- final App Store Connect declarations for retained Device ID, Other Diagnostic Data, and Product
+  Interaction used for App Functionality, conservatively linked and not used for tracking;
 - direct provider terms, processing locations, subprocessors, retention, training, human access,
   deletion, and international-transfer mechanisms;
+- a decision whether to request, review, and sign Fly.io's optional DPA; the account currently has
+  no active DPA, so its exact agreement/version and applicability are not yet evidenced;
 - applicable user rights, request-verification and response procedures, any required postal
   address, and the final support URL; and
 - the effective date, legal owner wording, target markets, and final age-rating reconciliation.
