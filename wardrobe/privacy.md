@@ -56,6 +56,9 @@ The backend necessarily receives network information such as an IP address and r
 while servicing a request. The developer authentication database stores keyed HMAC rate-limit
 subjects rather than raw IP addresses. Application security events are designed to omit IP
 addresses, installation and key identifiers, credentials, request content, and model content.
+Fly.io has confirmed that its customer-visible proxy/platform error records can nevertheless
+include paths, request IDs, and sometimes client IP, and that separate provider operational or
+abuse-prevention logs can contain source IP.
 
 Anonymous App Attest security metadata can include key and challenge IDs, one-time challenge
 secrets, a verified public key, an anonymous installation ID, assertion counter, App ID and
@@ -112,11 +115,14 @@ The implemented live-store limits are:
 - an App-Attest-verified deletion request synchronously removes that installation's live security
   record and sessions, within the policy's 24-hour maximum.
 
-The authentication volume is encrypted and configured for rolling 14-day snapshots. Provider
-confirmation of edge-log retention and evidence that snapshots actually disappear at the
-configured deadline remain release blockers; this draft does not make an unverified guarantee.
-After that evidence closes, this section must also state the evidenced provider-edge raw-IP
-period, the sanitized application-security-log maximum, and the alert-record maximum.
+The authentication volume is encrypted and configured for rolling 14-day snapshots. Fly.io says a
+snapshot then disappears from the customer listing, but does not disclose all-copy purge timing.
+Fly.io also says the customer-visible log stream is retained for a fixed seven days and cannot be
+shortened per app; its separate provider operational/abuse-log in-service retention is undisclosed
+and has no customer-enforceable hard maximum. This conflicts with the currently approved 24-hour
+provider raw-IP limit. After the owner resolves that hosting/policy decision, this section must
+state the final provider boundary, application-security-log maximum, snapshot semantics, and
+alert-record maximum.
 
 ## Your choices and controls
 
@@ -156,10 +162,11 @@ notice before that flow resumes.
 
 The following release evidence or owner decisions remain required:
 
-- written Fly.io confirmation for provider-controlled edge fields and raw-IP retention;
+- an owner decision to move to a host that can enforce the approved 24-hour provider raw-IP
+  maximum or to revise the policy and disclosure; Fly.io has confirmed it cannot enforce that
+  maximum;
 - observation of actual 14-day snapshot expiry and an isolated restore/deletion rehearsal;
 - monitored alert routing, delivery rehearsal, and alert-record retention;
-- an inbound-mail delivery rehearsal for the published contact address;
 - final production request captures and processor-retention review;
 - server-deletion evidence from the processed TestFlight build; and
 - verified Apple backup and restore behavior for every local store;
