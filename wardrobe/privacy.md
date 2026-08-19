@@ -169,7 +169,6 @@ The following release evidence or final publication decisions remain required:
 
 - observation of actual 14-day snapshot-list disappearance and an isolated restore/deletion
   rehearsal;
-- monitored alert routing, delivery rehearsal, and alert-record retention;
 - final production request captures and processor-retention review;
 - server-deletion evidence from the processed TestFlight build;
 - verified Apple backup and restore behavior for every local store;
