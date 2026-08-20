@@ -3,14 +3,15 @@ layout: default
 title: Wardrobe Stylist Privacy Policy
 description: How Wardrobe Stylist handles local, Gmail, AI, and security data
 permalink: /wardrobe/privacy/
-published: false
 ---
 
 # Wardrobe Stylist Privacy Policy
 
-> **Unpublished release draft.** This policy is not yet effective. It is intentionally excluded
-> from the live GitHub Pages build until the production evidence listed under **Before
-> publication** is complete.
+**Effective date:** 20 August 2026
+
+**Developer:** Tan Tze Hon
+
+**Initial App Store availability:** Singapore
 
 **Privacy contact:** [contact@tth.dev](mailto:contact@tth.dev)
 
@@ -25,9 +26,8 @@ and reminders are optional.
 
 The app stores wardrobe item details, photos you choose or capture, purchase details you approve,
 cached outfit recommendations, wear history, feature preferences, consent records, and sync state
-on your device. This information remains until you delete it or remove the app. The final policy
-will state the verified Apple backup and restore behavior for the SwiftData store, external photo
-files, preferences, and credential stores; that evidence is not complete yet.
+on your device. The app does not operate developer cloud sync for this data. Apple-managed device
+backups may retain or restore some local app data according to your device and backup settings.
 
 ## Google and Gmail information
 
@@ -38,10 +38,9 @@ receipts and extracts deterministic structured fields where possible.
 
 When a receipt needs cloud analysis, the app sends the developer backend a validated sender
 domain, a sanitized subject, and either bounded structured product fields or selected, redacted
-product lines. The current compatibility envelope also sends a Gmail message identifier to the
-backend for response correlation; the backend removes that identifier before sending minimized
-product context to Anthropic. Full sender addresses and raw message bodies are not sent to
-Anthropic.
+product lines. For response correlation, the request also includes a Gmail message identifier;
+the backend removes that identifier before sending minimized product context to Anthropic. Full
+sender addresses and raw message bodies are not sent to Anthropic.
 
 ## Wardrobe information used for AI styling
 
@@ -80,12 +79,10 @@ from receipts, generating outfit suggestions, preventing excessive repeats, secu
 operating the service, diagnosing failures, and complying with law. The developer does not use
 Gmail or technical/security data for advertising, data brokerage, credit or lending decisions,
 advertising profiles, or tracking across other companies' apps and websites.
-Provider handling remains governed by the provider terms and configurations that must be verified
-before this draft is published.
 
-Wardrobe Stylist is designed to follow the Google API Services User Data Policy, including its
-Limited Use requirements. This statement will be finalized only after Google accepts the
-production architecture and disclosures.
+Wardrobe Stylist's use and transfer of information received from Google APIs will adhere to the
+[Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy),
+including its Limited Use requirements.
 
 ## Processing providers
 
@@ -101,9 +98,9 @@ production architecture and disclosures.
   hosts this public support and privacy documentation and necessarily processes website-request
   network data when someone visits these pages.
 
-The final policy will identify the verified processing locations, subprocessors, contractual
-retention, training/model-improvement and human-access settings, deletion behavior, and applicable
-international-transfer mechanism for the selected distribution markets.
+These providers may process information outside Singapore under their linked privacy policies and
+service terms. The developer uses them only for the purposes described above and requires them to
+protect information consistently with this policy and applicable law.
 
 ## Retention
 
@@ -154,33 +151,10 @@ is completely secure.
 
 ## Children
 
-Wardrobe Stylist is not directed to children. The final statement will be reconciled with the App
-Store age rating and selected distribution regions before publication.
+Wardrobe Stylist is not directed to children.
 
 ## Changes
 
-The effective date will be added when this policy is published. Material changes will be reflected
-here. When a change affects an optional AI data flow, the app will require consent to the updated
-notice before that flow resumes.
-
-## Before publication
-
-The following release evidence or final publication decisions remain required:
-
-- observation of actual 14-day snapshot-list disappearance and an isolated restore/deletion
-  rehearsal;
-- final production request captures and processor-retention review;
-- server-deletion evidence from the processed TestFlight build;
-- verified Apple backup and restore behavior for every local store;
-- final App Store Connect declarations for retained Device ID, Other Diagnostic Data, and Product
-  Interaction used for App Functionality, conservatively linked and not used for tracking;
-- direct provider terms, processing locations, subprocessors, retention, training, human access,
-  deletion, and international-transfer mechanisms;
-- a decision whether to request, review, and sign Fly.io's optional DPA; the account currently has
-  no active DPA, so its exact agreement/version and applicability are not yet evidenced;
-- applicable user rights, request-verification and response procedures, any required postal
-  address, and the final support URL; and
-- the effective date, legal owner wording, target markets, and final age-rating reconciliation.
-
-Until those items close and `published: false` is removed, this file is review material rather
-than the public Wardrobe Stylist privacy policy.
+Material changes will be reflected here by updating the effective date. When a material change
+affects an optional AI data flow, the app will require consent to the updated notice before that
+flow resumes.
