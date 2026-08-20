@@ -22,33 +22,31 @@ app's license through the App Store is also subject to Apple's
 ## The service
 
 Wardrobe Stylist is a personal, local-first iOS wardrobe catalog and fashion-styling app. You can
-add items manually or from photos without Google. Connecting Gmail is optional and uses read-only
-access to find likely purchase receipts. Wardrobe Stylist does not create a human Wardrobe account;
-Google is not used as the app's backend identity.
+add items manually or from photos, browse and edit your wardrobe, and record worn looks. No human
+account is required.
 
-Receipt analysis and AI styling are optional connected features. When you choose and consent to
-one of those features, the app may use the developer-operated backend and Anthropic as described
-in the [Privacy Policy](/wardrobe/privacy/). Apple, Google, Fly.io, Anthropic, and network services
-may affect the availability of connected features.
+AI styling is an optional connected feature. When you request and consent to it, the app may use
+the developer-operated backend and Anthropic as described in the
+[Privacy Policy](/wardrobe/privacy/). Apple, Fly.io, Anthropic, and network services may affect the
+availability of connected features.
 
 ## Your responsibilities and automated results
 
 Use the app lawfully and only with content you are entitled to use. Do not interfere with, probe,
 overload, or bypass the app's security or rate limits.
 
-Receipt extraction and outfit suggestions are generated with automated systems and may be
-incomplete, inaccurate, or unsuitable. Review imported items before accepting them and use your
-own judgment before relying on a suggestion.
+Outfit suggestions are generated with automated systems and may be incomplete, inaccurate, or
+unsuitable. Use your own judgment before relying on a suggestion.
 
 ## Data and deletion
 
 You retain ownership of content you add. The app processes it only to provide features you choose,
 as described in the [Privacy Policy](/wardrobe/privacy/).
 
-Deleting local data, disconnecting Google, and deleting an anonymous live server-security record
-are separate controls. Removing or reinstalling the app does not itself revoke Google access or
-prove deletion of an earlier server record. See [Support](/wardrobe/) for the exact controls and
-the Privacy Policy for hosting-log and snapshot limits.
+Deleting local wardrobe data and deleting an anonymous live server-security record are separate
+controls. Removing or reinstalling the app does not itself prove deletion of an earlier server
+record. See [Support](/wardrobe/) for the exact controls and the Privacy Policy for hosting-log and
+snapshot limits.
 
 ## Availability and changes
 
