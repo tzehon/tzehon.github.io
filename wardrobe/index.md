@@ -3,17 +3,16 @@ layout: default
 title: Wardrobe Stylist
 description: Support and privacy controls for the Wardrobe Stylist iOS app
 permalink: /wardrobe/
-published: false
 ---
 
 # Wardrobe Stylist
 
-> **Unpublished release draft.** This page is intentionally excluded from the live GitHub Pages
-> build until its production evidence is complete.
-
 Wardrobe Stylist is a personal, local-first iOS fashion-stylist app. You can catalog clothing from
 photos, optionally import purchase information through read-only Gmail access, and request outfit
 suggestions. Manual and photo wardrobe features work without connecting Google.
+
+Wardrobe Stylist is developed and supported by Tan Tze Hon and is initially available in
+Singapore.
 
 ## Support
 
@@ -78,8 +77,9 @@ Reinstalling creates a new identity but does not prove that the old record was d
 original installation is unavailable, email [contact@tth.dev](mailto:contact@tth.dev) for general
 guidance. Support cannot safely identify an unlinked anonymous record and will never ask for a
 token, key, attestation object, Gmail content, or wardrobe photo. The server's inactivity policy
-removes an unused installation after 90 days; encrypted rolling snapshots are separately subject
-to the retention described in the [privacy policy](/wardrobe/privacy/).
+removes an unused live installation after 90 days. Hosting logs and encrypted snapshots are
+separate from the live server identity, are not removed immediately by the in-app action, and
+follow the retention described in the [privacy policy](/wardrobe/privacy/).
 
 ### How do I revoke Google access outside the app?
 
