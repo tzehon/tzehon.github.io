@@ -86,6 +86,7 @@ follow the retention described in the [privacy policy](/wardrobe/privacy/).
 Use [Google Account third-party connections](https://myaccount.google.com/connections), select
 Wardrobe Stylist, and remove access.
 
-## Privacy
+## Privacy and terms
 
-Read the [Wardrobe Stylist privacy policy](/wardrobe/privacy/).
+Read the [Wardrobe Stylist privacy policy](/wardrobe/privacy/) and
+[Terms of Service](/wardrobe/terms/).

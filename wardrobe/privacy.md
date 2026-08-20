@@ -17,6 +17,8 @@ permalink: /wardrobe/privacy/
 
 **Support response target:** Within two business days.
 
+**Terms of Service:** [Wardrobe Stylist Terms of Service](/wardrobe/terms/)
+
 Wardrobe Stylist helps you build a wardrobe catalog and get outfit suggestions. You can add items
 manually or from photos without connecting Google. If you connect Gmail, the app uses read-only
 access to look for purchase receipts. Gmail connection, AI processing, background receipt import,
