@@ -7,7 +7,7 @@ permalink: /wardrobe/privacy/
 
 # Wardrobe Stylist Privacy Policy
 
-**Effective date:** 20 August 2026
+**Effective date:** 21 August 2026
 
 **Developer:** Tan Tze Hon
 

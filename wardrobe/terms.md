@@ -7,7 +7,7 @@ permalink: /wardrobe/terms/
 
 # Wardrobe Stylist Terms of Use
 
-**Effective date:** 20 August 2026
+**Effective date:** 21 August 2026
 
 **Developer:** Tan Tze Hon
 
