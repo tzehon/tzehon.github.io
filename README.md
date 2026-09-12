@@ -6,6 +6,14 @@ Personal technical blog. Built with Jekyll and hosted on GitHub Pages.
 
 **Live site:** [blog.tth.dev](https://blog.tth.dev)
 
+## Wardrobe public pages
+
+The [Wardrobe support page](https://blog.tth.dev/wardrobe/),
+[privacy policy](https://blog.tth.dev/wardrobe/privacy/) and
+[Terms](https://blog.tth.dev/wardrobe/terms/) are maintained in `wardrobe/`.
+The 12 September 2026 privacy revision explains optional AI provider retention and the
+separate aggregate service budget ledger. It does not enable AI or change the iOS app.
+
 ## Local Development
 
 ```bash
